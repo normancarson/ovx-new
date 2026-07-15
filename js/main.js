@@ -59,8 +59,6 @@ async function renderFooter() {
           <ul>
             <li><a href="service-detail.html?slug=shipping-logistics">Global Shipping & Logistics</a></li>
             <li><a href="service-detail.html?slug=real-estate">Real Estate Negotiation</a></li>
-            <li><a href="service-detail.html?slug=design-marketing">Fashion & Interior Design</a></li>
-            <li><a href="service-detail.html?slug=affiliate-network">Affiliate Marketing</a></li>
             <li><a href="service-detail.html?slug=study-work-abroad">Study & Work Abroad</a></li>
           </ul>
         </div>
@@ -69,8 +67,6 @@ async function renderFooter() {
           <ul>
             <li><a href="about.html">About Us</a></li>
             <li><a href="study-abroad.html">Country Guide</a></li>
-            <li><a href="affiliate.html">Affiliate Program</a></li>
-            <li><a href="portal.html">Client Portal</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -94,10 +90,7 @@ async function renderFooter() {
   try {
     const settings = await OVX.getSettingsMap();
     const socialMap = [
-      { key: 'facebook', icon: 'fa-facebook-f' },
-      { key: 'instagram', icon: 'fa-instagram' },
-      { key: 'linkedin', icon: 'fa-linkedin-in' },
-      { key: 'twitter', icon: 'fa-x-twitter' }
+    
     ];
     const el = document.getElementById('footer-social');
     if (el) {
@@ -131,7 +124,7 @@ async function renderFooter() {
 function renderWhatsApp() {
   const container = document.getElementById('whatsapp-float-container');
   if (!container) return;
-  OVX.getSetting('whatsapp', '+250788000000').then(number => {
+  OVX.getSetting('whatsapp', '+250783145468').then(number => {
     const clean = number.replace(/[^0-9]/g, '');
     container.innerHTML = `<a class="whatsapp-float" href="https://wa.me/${clean}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>`;
   });
