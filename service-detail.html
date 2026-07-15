@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Service Details | OVX</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main id="main-content">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="services.html">Services</a></div>
+      <h1 id="service-title">Loading Service...</h1>
+      <p id="service-summary" class="lead"></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="display:grid; grid-template-columns: 1.6fr 1fr; gap:60px; align-items:flex-start;" id="service-layout">
+      
+      <!-- LEFT: CONTENT -->
+      <div>
+        <img id="service-image" src="" alt="" style="width:100%; border-radius:15px; margin-bottom:35px; box-shadow: var(--shadow-md);">
+        <h2>About this Program</h2>
+        <p id="service-description" style="font-size:1.1rem; color:var(--gray-700);"></p>
+
+        <h3 style="margin-top:40px;">What is Included</h3>
+        <ul id="service-included" style="list-style:none; padding:0; margin-top:20px;">
+          <!-- Features injected here -->
+        </ul>
+      </div>
+
+      <!-- RIGHT: WEB3FORMS INQUIRY -->
+      <div class="form-card" style="position: sticky; top: 100px;">
+        <h3>Inquire About This</h3>
+        <p style="font-size:0.9rem; margin-bottom:20px;">Complete the form below and an OVX expert will contact you.</p>
+        
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <!-- IMPORTANT: Replace with your key -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" id="form-subject" value="General Service Inquiry">
+          <input type="hidden" name="from_name" value="OVX Website">
+
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp Number / Phone</label>
+            <input type="tel" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Your Requirements</label>
+            <textarea name="message" placeholder="Tell us more about your needs..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/main.js"></script>
+<script>
+const serviceData = {
+  "shipping": {
+    title: "Global Shipping & Logistics",
+    summary: "Door-to-door cargo delivery from USA, Dubai, and China to Rwanda.",
+    description: "OVX provides specialized logistics for individuals and businesses. We handle package consolidation, customs clearance with RRA, and final delivery to your doorstep in Kigali. No hidden fees, just transparent shipping.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200",
+    features: ["Customs Clearance Included", "Air & Sea Freight Options", "Warehousing in Dubai/USA", "Door-to-Door Delivery"]
+  },
+  "real-estate": {
+    title: "Real Estate & Land Negotiation",
+    summary: "Safe, verified property investment in Rwanda for the Diaspora.",
+    description: "We act as your trusted eyes on the ground. From verifying land titles at RLMUA to negotiating prices and managing renovations, we ensure your investment in Rwanda is secure and profitable.",
+    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200",
+    features: ["Title Deed Verification", "Property Inspections", "Legal Closing Support", "Renovation Management"]
+  },
+  "jobs": {
+    title: "Global Job Placement",
+    summary: "Professional work pathways in USA, Canada, Korea, and Europe.",
+    description: "Whether you are a truck driver, an electrician, or a specialized engineer, we help you find legal work pathways. We focus on high-demand sectors where degrees aren't always required but skills are highly rewarded.",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200",
+    features: ["Visa Sponsorship Guidance", "Job Matching", "Interview Coaching", "Relocation Support"]
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('slug') || "jobs";
+const content = serviceData[slug] || serviceData["jobs"];
+
+function initPage() {
+  document.getElementById('page-title').textContent = content.title + " | OVX";
+  document.getElementById('service-title').textContent = content.title;
+  document.getElementById('service-summary').textContent = content.summary;
+  document.getElementById('service-description').textContent = content.description;
+  document.getElementById('service-image').src = content.image;
+  document.getElementById('form-subject').value = "Inquiry: " + content.title;
+
+  document.getElementById('service-included').innerHTML = content.features.map(f => `
+    <li style="padding:10px 0; border-bottom:1px solid var(--gray-100);">
+      <i class="fa-solid fa-check-circle" style="color:var(--blue); margin-right:10px;"></i> ${f}
+    </li>`).join('');
+}
+
+window.onload = initPage;
+</script>
+</body>
+</html>

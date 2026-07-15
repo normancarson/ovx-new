@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Jobs Without Degrees | OVX</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main id="main-content">
+    <section class="page-hero">
+        <div class="container">
+            <h1>High-Paying Jobs Without a Degree</h1>
+            <p>Professional pathways in the USA, Canada, South Korea, and Europe for skilled workers.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="why-grid">
+                <!-- Job Card 1 -->
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-truck-moving"></i></div>
+                    <h3>Logistics & Transport</h3>
+                    <p>Truck Drivers & Delivery Specialists. High demand in USA and Canada.</p>
+                </div>
+                <!-- Job Card 2 -->
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-tools"></i></div>
+                    <h3>Technical Trades</h3>
+                    <p>Electricians, Plumbers, and HVAC Technicians. Top earners in Europe.</p>
+                </div>
+                <!-- Job Card 3 -->
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h3>Construction</h3>
+                    <p>Heavy Equipment Operators & Skilled Laborers. Booming in South Korea.</p>
+                </div>
+                <!-- Job Card 4 -->
+                <div class="why-item">
+                    <div class="why-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Caregiving</h3>
+                    <p>Certified Caregivers & Hospitality staff. Stable pathways worldwide.</p>
+                </div>
+            </div>
+
+            <div class="form-card mt-40" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+                <h2 class="text-center">Apply for Job Assistance</h2>
+                <p class="text-center">Tell us your skills, and we will match you with the right destination.</p>
+                
+                <!-- WEB3FORMS INTEGRATION -->
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="ead845f8-28a6-4c8b-b0cc-118c44ddcaf7">
+                    <input type="hidden" name="subject" value="New Job Inquiry from OVX">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Desired Country</label>
+                            <select name="target_country">
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="Europe">Europe</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Current Skill/Trade</label>
+                            <input type="text" name="skill" placeholder="e.g. Driver, Electrician" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea name="message" placeholder="Tell us about your work experience..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
