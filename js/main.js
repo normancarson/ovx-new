@@ -73,10 +73,7 @@ async function renderFooter() {
         <div class="footer-col">
           <h4>Stay Updated</h4>
           <p>Get news on new destinations, deals & opportunities.</p>
-          <form class="newsletter-form" id="newsletter-form">
-            <input type="email" id="newsletter-email" placeholder="Your email" required>
-            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+          
           <div class="form-msg" id="newsletter-msg"></div>
         </div>
       </div>
